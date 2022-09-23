@@ -1,6 +1,6 @@
 package com.csc205.project2;
 
-public class Cube {
+public class Cube extends Shape{
     private double width;
 
     public Cube() {
@@ -20,22 +20,26 @@ public class Cube {
     public void setWidth(double Width) {
         this.width = width;
     }
-
-    public double surfaceArea() {
+    @Override
+    public double SurfaceArea() {
         return 6 * Math.pow(width, 2);
     }
-
-    public double volume() {
+    @Override
+    public double Volume() {
         return (Math.pow(width, 3));
     }
 
-    @Override
-    public String toString() {
+    public String toString () {
         final StringBuilder sb = new StringBuilder("Cube {");
         sb.append("width=").append(width);
-        sb.append(", surface area=").append(surfaceArea());
-        sb.append(", volume=").append(volume());
+        sb.append(", surface area=")
+                .append(SurfaceArea());
+        sb.append(", volume=")
+                .append(Volume());
         sb.append('}');
         return sb.toString();
     }
 }
+
+
+
